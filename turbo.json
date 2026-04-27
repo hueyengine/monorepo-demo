@@ -1,0 +1,48 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "ui": "tui",
+  "globalDependencies": [
+    "tsconfig.base.json",
+    ".prettierrc.json",
+    ".editorconfig"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**"],
+      "inputs": [
+        "src/**",
+        "index.html",
+        "package.json",
+        "tsconfig.json",
+        "vite.config.ts"
+      ]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"],
+      "inputs": ["src/**", "package.json", "vitest.config.ts", "tsconfig.json"]
+    },
+    "lint": {
+      "dependsOn": [],
+      "outputs": [],
+      "inputs": [
+        "src/**",
+        "*.vue",
+        "*.ts",
+        "*.js",
+        "eslint.config.js",
+        "package.json"
+      ]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"],
+      "outputs": [],
+      "inputs": ["src/**", "*.vue", "tsconfig.json", "package.json"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    }
+  }
+}

@@ -1,3 +1,4 @@
+// formatDate: 跨地区一致的日期格式化（用于 monorepo 缓存验证）
 export function formatDate(date: Date, locale = "zh-CN"): string {
   return new Intl.DateTimeFormat(locale, {
     year: "numeric",
