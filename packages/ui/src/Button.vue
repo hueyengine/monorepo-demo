@@ -15,7 +15,7 @@ const props = withDefaults(
   }
 );
 
-defineEmits<{
+const emit = defineEmits<{
   (event: "click", payload: MouseEvent): void;
 }>();
 
@@ -26,10 +26,15 @@ const cls = computed(() =>
     props.disabled && "r-button--disabled"
   )
 );
+
+function onClick(event: MouseEvent) {
+  if (props.disabled) return;
+  emit("click", event);
+}
 </script>
 
 <template>
-  <button :class="cls" :disabled="disabled" @click="$emit('click', $event)">
+  <button :class="cls" :disabled="disabled" @click="onClick">
     <slot />
   </button>
 </template>

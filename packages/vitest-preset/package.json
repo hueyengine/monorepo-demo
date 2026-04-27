@@ -1,0 +1,23 @@
+{
+  "name": "@repo/vitest-preset",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./node": "./node.js",
+    "./vue": "./vue.js"
+  },
+  "peerDependencies": {
+    "vitest": "^2.1.0",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "jsdom": "^25.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vitejs/plugin-vue": {
+      "optional": true
+    },
+    "jsdom": {
+      "optional": true
+    }
+  }
+}

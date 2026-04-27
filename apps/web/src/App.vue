@@ -19,9 +19,9 @@ function inc() {
     <section class="card">
       <p>当前计数：{{ count }}</p>
       <div class="row">
-        <RButton type="primary" @click="inc">+1</RButton>
-        <RButton @click="count = 0">重置</RButton>
-        <RButton disabled>禁用按钮</RButton>
+        <RButton type="primary" @click="inc"> +1 </RButton>
+        <RButton @click="count = 0"> 重置 </RButton>
+        <RButton disabled> 禁用按钮 </RButton>
       </div>
     </section>
 

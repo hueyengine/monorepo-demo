@@ -13,12 +13,30 @@
     }
   },
   "scripts": {
-    "build": "echo \"(ui) source-only package, no build needed\""
+    "build": "echo \"(ui) source-only package, no build needed\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "peerDependencies": {
     "vue": "^3.5.0"
   },
   "dependencies": {
     "@repo/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@repo/vitest-preset": "workspace:*",
+    "@vitejs/plugin-vue": "^5.2.0",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^9.13.0",
+    "jsdom": "^25.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.1.0"
   }
 }

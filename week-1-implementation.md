@@ -72,13 +72,13 @@ monorepo-demo/
 
 ### 2.3 关键技术决策
 
-| 决策点                  | 选择                          | 理由 |
-| ----------------------- | ----------------------------- | --- |
-| 包管理器                | pnpm                          | workspace 支持成熟，磁盘占用低，软链机制清晰 |
-| 是否引入 Turborepo      | **否**                        | 学习期保持工具最少集，先理解 pnpm workspace |
-| 内部包是否需要构建      | **否**（直接消费源码）        | 主应用 Vite 直接转译 TS/Vue，HMR 立即生效 |
-| Vue 在组件包中的依赖类型 | `peerDependencies`            | 避免多 Vue 实例引发的 inject/hydration 异常 |
-| TypeScript              | 用，但不严格校验              | 第 1 周聚焦“能跑通”，类型基建放第 2 周 |
+| 决策点                   | 选择                   | 理由                                         |
+| ------------------------ | ---------------------- | -------------------------------------------- |
+| 包管理器                 | pnpm                   | workspace 支持成熟，磁盘占用低，软链机制清晰 |
+| 是否引入 Turborepo       | **否**                 | 学习期保持工具最少集，先理解 pnpm workspace  |
+| 内部包是否需要构建       | **否**（直接消费源码） | 主应用 Vite 直接转译 TS/Vue，HMR 立即生效    |
+| Vue 在组件包中的依赖类型 | `peerDependencies`     | 避免多 Vue 实例引发的 inject/hydration 异常  |
+| TypeScript               | 用，但不严格校验       | 第 1 周聚焦“能跑通”，类型基建放第 2 周       |
 
 ---
 
@@ -579,8 +579,8 @@ monorepo-demo/
 
 加深理解，建议都做一遍：
 
-1. **加工具函数**：在 `packages/utils` 加 `truncate(str, n)`，在 `App.vue` 里用起来  
-2. **加新组件**：在 `packages/ui` 新增 `RTag`，并在 `App.vue` 渲染若干个标签  
+1. **加工具函数**：在 `packages/utils` 加 `truncate(str, n)`，在 `App.vue` 里用起来
+2. **加新组件**：在 `packages/ui` 新增 `RTag`，并在 `App.vue` 渲染若干个标签
 3. **玩转 filter 命令**：尝试 `pnpm --filter @repo/utils ls`、`pnpm --filter ...@repo/ui build`（注意 `...` 表示“所有依赖它的包”）
 
 完成后，你对 pnpm workspace 的核心机制就基本掌握了。

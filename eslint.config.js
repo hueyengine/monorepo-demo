@@ -1,0 +1,13 @@
+import base from "@repo/eslint-config/base";
+
+export default [
+  ...base,
+  {
+    ignores: [
+      "**/dist/**",
+      "**/coverage/**",
+      "**/node_modules/**",
+      "pnpm-lock.yaml",
+    ],
+  },
+];
